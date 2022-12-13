@@ -1,6 +1,6 @@
 [
     {
-        "trak": "H–sp3",
+        "skupina": "H–sp3",
         "IR": [
             [
                 [2800, 3000]
@@ -9,7 +9,7 @@
         "info": "Vzdolžna nihanja atoma vodika, vezanega na sp3-hibridiziran ogljikov atom (alkani)"
     },
     {
-        "trak": "H–sp2",
+        "skupina": "H–sp2",
         "IR": [
             [
                 [3000, 3100]
@@ -18,7 +18,7 @@
         "info": "Vzdolžna nihanja atoma vodika, vezanega na sp2-hibridiziran ogljikov atom (vinilni in aromatski H-atomi)"
     },
     {
-        "trak": "H–sp",
+        "skupina": "H–sp",
         "IR": [
             [
                 3300
@@ -27,7 +27,7 @@
         "info": "Vzdolžna nihanja atoma vodika, vezanega na sp-hibridiziran ogljikov atom (terminalni alkini)"
     },
     {
-        "trak": "–CH3",
+        "skupina": "–CH3",
         "IR": [
             [
                 1380, 1460
@@ -36,7 +36,7 @@
         "info": "Prečna nihanja vodikov na sp3-hibridiziranih ogljikih (metilna skupina)"
     },
     {
-        "trak": "–CH2–",
+        "skupina": "–CH2–",
         "IR": [
             [
                 1460
@@ -45,7 +45,7 @@
         "info": "Prečna nihanja vodikov na sp3-hibridiziranih ogljikih (metilenska skupina)"
     },
     {
-        "trak": "monosubstituiran benzen",
+        "skupina": "monosubstituiran benzen",
         "IR": [
             [
                 750, 700
@@ -54,7 +54,7 @@
         "info": "Neravninska prečna nihanja vodikov v monosubstituiranih benzenih"
     },
     {
-        "trak": "orto-",
+        "skupina": "orto-",
         "IR": [
             [
                 750
@@ -63,7 +63,7 @@
         "info": "Neravninska prečna nihanja vodikov v orto-disubstituiranih benzenih"
     },
     {
-        "trak": "meta-",
+        "skupina": "meta-",
         "IR": [
             [
                 690, 780
@@ -72,7 +72,7 @@
         "info": "Neravninska prečna nihanja vodikov v meta-disubstituiranih benzenih"
     },
     {
-        "trak": "para-",
+        "skupina": "para-",
         "IR": [
             [
                 [800, 860]
@@ -81,7 +81,7 @@
         "info": "Neravninska prečna nihanja vodikov v para-disubstituiranih benzenih"
     },
     {
-        "trak": "aldehid",
+        "skupina": "aldehid",
         "IR": [
             [
                 2720, 2820
@@ -90,7 +90,7 @@
         "info": "C–H vez aldehidov (simetrično in asimetrično vzdolžno nihanje)"
     },
     {
-        "trak": "O–H",
+        "skupina": "O–H",
         "IR": [
             [
                 [3610, 3670]
@@ -102,7 +102,7 @@
         "info": "Vzdolžna nihanja vezi O–H (parna faza, razredčene raztopine ;; nerazredčeni alkoholi (širok vrh))"
     },
     {
-        "trak": "–COOH",
+        "skupina": "–COOH",
         "IR": [
             [
                 [2800, 3500], 1710
@@ -111,7 +111,7 @@
         "info": "Vzdolžna nihanja vezi O–H v karboksilni kislini (širok trak, lahko več vrhov, maksimum pri 3000) ;; nihanje C=O"
     },
     {
-        "trak": "–NH2",
+        "skupina": "–NH2",
         "IR": [
             [
                 [3280, 3400], [1590, 3300]
@@ -120,7 +120,7 @@
         "info": "Dva trakova, primarni amin (vzdolžno nihanje N–H ;; prečno nihanje)"
     },
     {
-        "trak": "–NH–",
+        "skupina": "–NH–",
         "IR": [
             [
                 3300
@@ -129,7 +129,7 @@
         "info": "En trak, sekundarni amin (vzdolžno nihanje N–H)"
     },
     {
-        "trak": "Ar–NH_",
+        "skupina": "Ar–NH_",
         "IR": [
             [
                 [3350, 3500]
@@ -141,7 +141,7 @@
         "info": "Aromatsko jedro jih pomakne v levo!"
     },
     {
-        "trak": "1°-amid",
+        "skupina": "1°-amid",
         "IR": [
             [
                 3180, 3350, 1650
@@ -150,7 +150,7 @@
         "info": "Vzdolžno nihanje N–H ;; C=O v amidu"
     },
     {
-        "trak": "2°-amid",
+        "skupina": "2°-amid",
         "IR": [
             [
                 [3250, 3300], 1650
@@ -159,7 +159,7 @@
         "info": "Nihajne N–H ;; C=O v amidu"
     },
     {
-        "trak": "S–H",
+        "skupina": "S–H",
         "IR": [
             [
                 [2540, 2630]
@@ -168,7 +168,7 @@
         "info": "Širok vrh (čeprav meni se zdi ušpičen ...); cisteini ..."
     },
     {
-        "trak": "C=C",
+        "skupina": "C=C",
         "IR": [
             [
                 [1600, 1700]
@@ -177,7 +177,7 @@
         "info": "..."
     },
     {
-        "trak": "C≡C",
+        "skupina": "C≡C",
         "IR": [
             [
                 [2100, 2260]
@@ -186,7 +186,7 @@
         "info": "Oster, a zelo šibek; pri simetričnih lahko izgine"
     },
     {
-        "trak": "Ar-q",
+        "skupina": "Ar-q",
         "IR": [
             [
                 1450, 1500, 1580, 1600
@@ -195,7 +195,7 @@
         "info": "Aromatski kvartet. Lahko so 2, 3 ali 4 trakovi"
     },
     {
-        "trak": "ester",
+        "skupina": "ester",
         "IR": [
             [
                 [1100, 1300], 1735
@@ -204,7 +204,7 @@
         "info": "Nihanje C–O ;; nihanje C=O"
     },
     {
-        "trak": "C=O",
+        "skupina": "C=O",
         "IR": [
             [
                 1720
@@ -213,7 +213,7 @@
         "info": "Keton. Napetost obroča, manjšega oc C6, ga pomakne v levo. Konjugacija ga pomakne v desno (za 30; za dodatnih 15)."
     },
     {
-        "trak": "Ar–C=O",
+        "skupina": "Ar–C=O",
         "IR": [
             [
                 [1685, 1700]
@@ -222,7 +222,7 @@
         "info": "Aromatski keton"
     },
     {
-        "trak": "aldehid",
+        "skupina": "aldehid",
         "IR": [
             [
                 1730
@@ -231,7 +231,7 @@
         "info": "Nekoliko bolj levo od ketonov"
     },
     {
-        "trak": "Kislinski klorid",
+        "skupina": "Kislinski klorid",
         "IR": [
             [
                 1800
@@ -240,7 +240,7 @@
         "info": "Alifatski kislinski klorid; Ar: za 30 v desno"
     },
     {
-        "trak": "anhidrid",
+        "skupina": "anhidrid",
         "IR": [
             [
                 1810, 1750
@@ -249,7 +249,7 @@
         "info": "Pri asimetričnih anhidridih je v tem območju lahko več trakov."
     },
     {
-        "trak": "C≡N",
+        "skupina": "C≡N",
         "IR": [
             [
                 [2210, 2260]
@@ -258,7 +258,7 @@
         "info": "Oster in zelo intenziven"
     },
     {
-        "trak": "–NO2",
+        "skupina": "–NO2",
         "IR": [
             [
                 1550, 1380
@@ -267,7 +267,7 @@
         "info": "Nitrlina skupina. Prvi je močnejši; konjugacija premakne v desno"
     },
     {
-        "trak": "C–F",
+        "skupina": "C–F",
         "IR": [
             [
                 [1000, 1100]
@@ -276,7 +276,7 @@
         "info": "Intenziven, širši. Navzdol po skupini masa narašča, zato jakost vezi pada, hence gre v desno."
     },
     {
-        "trak": "C–Cl",
+        "skupina": "C–Cl",
         "IR": [
             [
                 [540, 760]
@@ -285,7 +285,7 @@
         "info": "Slabo razpoznaven."
     },
     {
-        "trak": "C–Br, C–I",
+        "skupina": "C–Br, C–I",
         "IR": [
             [
                 [0, 600]

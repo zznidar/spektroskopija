@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div.trak {
+            height: 1rem;
+            border-radius: 1rem;
+            position: absolute;
+        }
+
+        p.ime {
+            /* position: fixed; */
+            margin: 0;
+            /* z-index: 10; */
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        div.krog {
+            width: 1rem;
+            box-sizing: border-box;
+            border: solid 0.2rem white;
+        }
+
+        div#seznam {
+            position: fixed;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="seznam">
+<!--         <p class="ime">Tole je test.</p>
+        <p class="ime">Tole je test.</p>
+        <p class="ime">Ena.</p> -->
+    </div>
+    <div id="graf" style="width: 3600px; background-color: aquamarine;">
+<!--         <div class="skupina">
+            <p class="ime">Tole je test.</p>
+            <div class="trak" style="background-color: blue; width: 100px; left: 10px"></div><div class="trak" style="background-color: blue; width: 30px; left: 200px"></div>
+        </div>
+        <div class="skupina">
+            <br>
+            <p class="ime">Tole je test.</p>
+            <div class="trak" style="background-color: green; width: 100px; left: 10px"></div>
+        </div> -->
+    </div>
+    
+
+    <script>
+        // Let the list scroll vertically, but be fixed horizontally.
+        // Source: https://codepen.io/rickyH/pen/GoJWEe
+        
+/* @Note: not sure e.pageX will work in IE8 */
+(function(window){
+  
+  /* A full compatability script from MDN: */
+  var supportPageOffset = window.pageXOffset !== undefined;
+  var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+ 
+  /* Set up some variables  */
+  var demoItem3 = document.getElementById("seznam"); 
+  /* Add an event to the window.onscroll event */
+  window.addEventListener("scroll", function(e) {  
+    
+    /* A full compatability script from MDN for gathering the x and y values of scroll: */
+    var x = supportPageOffset ? window.pageXOffset : isCSS1Compat ? document.documentElement.scrollLeft : document.body.scrollLeft;
+var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+ 
+    demoItem3.style.top = -y + 8 + "px"; // default body margin is 8px
+  });
+  
+})(window);
+ 
+    </script>
+
+
+    <script>
+        // We will ignore ors and show them as ands. Or, we could just change the colour!
+        const LEFT_MARGIN = 8;
+        const MAX_VAL_ST = 4000;
+        const MIN_VAL_ST = 400;
+
+        function render(data) {
+            for(let skupina of data) {
+                //console.log(skupina);
+                trakovi = skupina["IR"];
+
+                out_s = document.createElement("div");
+                out_s.classList.add("skupina");
+                let out_ime = document.createElement("p");
+                out_ime.classList.add("ime");
+                out_ime.innerText = skupina["skupina"];
+                //out_s.appendChild(out_ime);
+
+                for(let ors of trakovi) {
+                    // OR between j's
+                    //console.log(ors);
+                    // colour = pick-a-colour();
+                    for(let ands of ors) {
+                        // AND between them
+                        console.log(ands);
+                        switch (typeof(ands)) {
+                            case "number":
+                                console.log("number, krog, 1 vrednost");
+                                let krog = document.createElement("div");
+                                krog.classList.add("trak");
+                                krog.classList.add("krog");
+                                krog.style.left = `calc(${MAX_VAL_ST - (ands + LEFT_MARGIN)}px - 0.5rem)`;
+                                out_s.appendChild(krog);
+                                break;
+                            case "object":
+                                console.log("object, območje");
+                                let velikost = Math.min(ands[1] - ands[0], ands[1] - MIN_VAL_ST);
+                                let trak = document.createElement("div");
+                                trak.classList.add("trak");
+                                trak.style.left = `${MAX_VAL_ST - ands[1] + LEFT_MARGIN}px`;
+                                trak.style.width = `${velikost}px`;
+                                trak.style.backgroundColor = "blue";
+                                out_s.appendChild(trak);
+                                break;
+                            default:
+                                console.warn(`${ands} is neither number nor object!`);
+                                break;
+                        }
+                    }
+
+                    
+                }
+                out_s.appendChild(document.createElement("br"));
+                document.getElementById("graf").appendChild(out_s);
+                document.getElementById("seznam").appendChild(out_ime);
+            }
+        }
+
+
+    var IR;
+    fetch("IR.json")
+    .then((response) => response.text())
+    .then((text) => {
+        console.log(text);
+        IR = JSON.parse(text)
+        render(IR);
+    })
+    </script>
+</body>
+</html>

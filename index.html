@@ -30,6 +30,26 @@
             position: fixed;
             z-index: 10;
         }
+
+        div.skupina:hover {
+            background-color: pink;
+        }
+
+        div.mer100 {
+            width: 100px;
+            height: 1rem;
+            border-left: solid 0.1rem black;
+            border-right: solid 0.1rem black;
+            float:inline-start;
+            box-sizing: border-box;
+        }
+        div.mer100 p {
+            height: 1rem;
+            margin: 0;
+            background-color:white;
+            overflow: clip;
+            font-size: 0.7rem;
+        }
     </style>
 </head>
 <body>
@@ -38,8 +58,15 @@
 <!--         <p class="ime">Tole je test.</p>
         <p class="ime">Tole je test.</p>
         <p class="ime">Ena.</p> -->
+        <p class="ime"><i>Skala</i></p>
     </div>
     <div id="graf" style="width: 3600px; background-color: aquamarine;">
+        <div id="skala" class="skupina">
+            <!-- V bistvu je skala -->
+<!--             <div class="mer100">
+                <p>Tole je dolgo testno besedilo!!!!!!!</p>
+            </div>
+ -->        </div>
 <!--         <div class="skupina">
             <p class="ime">Tole je test.</p>
             <div class="trak" style="background-color: blue; width: 100px; left: 10px"></div><div class="trak" style="background-color: blue; width: 30px; left: 200px"></div>
@@ -111,7 +138,7 @@ var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documen
                                 let krog = document.createElement("div");
                                 krog.classList.add("trak");
                                 krog.classList.add("krog");
-                                krog.style.left = `calc(${MAX_VAL_ST - (ands + LEFT_MARGIN)}px - 0.5rem)`;
+                                krog.style.left = `calc(${MAX_VAL_ST - ands + LEFT_MARGIN}px - 0.5rem)`;
                                 out_s.appendChild(krog);
                                 break;
                             case "object":
@@ -136,6 +163,19 @@ var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documen
                 document.getElementById("graf").appendChild(out_s);
                 document.getElementById("seznam").appendChild(out_ime);
             }
+
+            // Now let's render skala
+            skala = document.getElementById("skala");
+            for(let i = MAX_VAL_ST; i > MIN_VAL_ST; i-=100) {
+                let mer100 = document.createElement("div");
+                mer100.classList.add("mer100");
+                //mer100.style.left = `${MAX_VAL_ST - i}px`;
+                let mer100p = document.createElement("p");
+                mer100p.innerText = i;
+                mer100.appendChild(mer100p);
+                skala.appendChild(mer100);
+            }
+            skala.appendChild(document.createElement("br"));
         }
 
 

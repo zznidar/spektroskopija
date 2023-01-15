@@ -9,6 +9,14 @@
     <meta name="description" content="Značilni vrhovi v IR-spektru">
 
     <style>
+        :root {
+            --FACTOR: 1;
+        }
+
+        div#graf {
+            width: calc(var(--FACTOR) * 3600px); 
+            background-color: aquamarine
+        }
         div.trak {
             height: 1rem;
             border-radius: 1rem;
@@ -39,7 +47,7 @@
         }
 
         div.mer100 {
-            width: 100px;
+            width: calc(var(--FACTOR) * 100px);
             height: 1rem;
             border-left: solid 0.1rem black;
             border-right: solid 0.1rem black;
@@ -63,7 +71,7 @@
         <p class="ime">Ena.</p> -->
         <p class="ime"><i>Skala</i></p>
     </div>
-    <div id="graf" style="width: 3600px; background-color: aquamarine;">
+    <div id="graf">
         <div id="skala" class="skupina">
             <!-- V bistvu je skala -->
 <!--             <div class="mer100">
@@ -120,6 +128,9 @@ var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documen
         const LEFT_MARGIN = 8;
         const MAX_VAL_ST = 4000;
         const MIN_VAL_ST = 400;
+        const FACTOR = 1;
+
+        document.querySelector(':root').style.setProperty('--FACTOR', FACTOR);
 
         function render(data) {
             for(let skupina of data) {
@@ -146,7 +157,7 @@ var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documen
                                 let krog = document.createElement("div");
                                 krog.classList.add("trak");
                                 krog.classList.add("krog");
-                                krog.style.left = `calc(${MAX_VAL_ST - ands + LEFT_MARGIN}px - 0.5rem)`;
+                                krog.style.left = `calc(${(MAX_VAL_ST - ands + LEFT_MARGIN)*FACTOR}px - 0.5rem)`;
                                 out_s.appendChild(krog);
                                 break;
                             case "object":
@@ -154,8 +165,8 @@ var y = supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documen
                                 let velikost = Math.min(ands[1] - ands[0], ands[1] - MIN_VAL_ST);
                                 let trak = document.createElement("div");
                                 trak.classList.add("trak");
-                                trak.style.left = `${MAX_VAL_ST - ands[1] + LEFT_MARGIN}px`;
-                                trak.style.width = `${velikost}px`;
+                                trak.style.left = `${(MAX_VAL_ST - ands[1] + LEFT_MARGIN)*FACTOR}px`;
+                                trak.style.width = `${velikost*FACTOR}px`;
                                 trak.style.backgroundColor = "blue";
                                 out_s.appendChild(trak);
                                 break;

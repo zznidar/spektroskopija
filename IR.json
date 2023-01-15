@@ -210,7 +210,7 @@
                 1720
             ]
         ],
-        "info": "Keton. Napetost obroča, manjšega oc C6, ga pomakne v levo. Konjugacija ga pomakne v desno (za 30; za dodatnih 15)."
+        "info": "Keton. Napetost obroča, manjšega oc C6, ga pomakne v levo, kakor tudi, če je del estra, anhidrida, KSL-klorida. Konjugacija ga pomakne v desno (za 30; za dodatnih 15)."
     },
     {
         "skupina": "Ar–C=O",
@@ -292,6 +292,14 @@
             ]
         ],
         "info": "Slabše razpoznavni trakovi, pogosto pod 600"
+    },
+    {
+        "skupina": "eter",
+        "IR": [
+            [
+                1150
+            ]
+        ]
     }
     
 ]
